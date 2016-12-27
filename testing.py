@@ -1,3 +1,4 @@
-import pandas as pd
-#import matplotlib.pyplot as py
-print "This is some shit"
+from StockMarketAnalyzer import *
+
+manager = StockMarketAnalyzer("data/", "watchlist.csv")
+

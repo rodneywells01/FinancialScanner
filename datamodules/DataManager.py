@@ -1,6 +1,7 @@
 import urllib
 import datetime
 
+
 class DataManager:
 
     def __init__(self, tickerfolder):

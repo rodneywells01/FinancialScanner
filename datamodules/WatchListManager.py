@@ -8,9 +8,9 @@ class WatchListManager:
 
         # Load saved.
         with open(self.watchlistfile, 'rb') as csvfile:
-            reader = csv.reader(csvfile)[0]
+            reader = csv.reader(csvfile)
             for ticker in reader:
-                self.tickers.append(ticker)
+                self.tickers.append(ticker[0])
 
             print self.tickers
 

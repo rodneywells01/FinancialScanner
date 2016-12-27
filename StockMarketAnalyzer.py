@@ -1,9 +1,9 @@
-from datamodules import DataManager
-
+from datamodules import *
 
 class StockMarketAnalyzer:
 
-    def __init__(self, tickerfolder):
+    def __init__(self, tickerfolder, watchlistfile):
         """Initialize sub modules"""
         self.dataManager = DataManager(tickerfolder)
-        self.watchlistManager =
+        self.watchlistManager = WatchListManager(watchlistfile)
+

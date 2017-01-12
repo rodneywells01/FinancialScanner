@@ -9,10 +9,9 @@ class StockMarketAnalyzer:
         self.watchListManager = wlm.WatchListManager(watchlistfile)
 
         # Get up-to-date data.
+        print "Fetching up to date data..."
+        tickercounter = 1
         for ticker in self.watchListManager.tickers:
-            self.dataManager.fetch_csv(ticker)
-
-
-
-
-
+            print "Fetching... (" + str(tickercounter) + " / " + str(len(self.watchListManager.tickers)) + ")"
+            self.dataManager.fetch_market_data(ticker)
+            tickercounter  += 1

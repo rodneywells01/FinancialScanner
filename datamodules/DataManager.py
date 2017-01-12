@@ -16,13 +16,12 @@ class DataManager:
     def set_end_date(self, enddate):
         self.end_date = enddate
 
-    def fetch_csv(self, ticker):
+    def fetch_market_data(self, ticker):
         """Fetch data from yahoo finance, save in data/"""
 
         # Construct strings for day, month, and year for start and end.
         startcomponents = ["&d=" + str(self.start_date.month - 1),
                           "&e=" + str(self.start_date.day), "&f=" + str(self.start_date.year)]
-
 
         endcomponents = ["&a=" + str(self.end_date.month - 1),
                          "&b=" + str(self.end_date.day), "&c=" + str(self.end_date.year)]

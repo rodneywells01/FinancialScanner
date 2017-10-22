@@ -7,7 +7,7 @@ import datetime
 def fetch_ticker(ticker):
     # Get current month, day, and year.
     now = datetime.datetime.now()
-    print now.month, now.day, now.year
+    print(now.month, now.day, now.year)
     datecomponents = ["&d=" + str(now.month - 1), "&e=" + str(now.day), "&f=" + str(now.year)]
 
     url = "http://real-chart.finance.yahoo.com/table.csv?s="
@@ -16,7 +16,7 @@ def fetch_ticker(ticker):
         url += component
 
     url += "&g=d&a=2&b=13&c=1986&ignore=.csv"
-    print url
+    print(url)
     urllib.urlretrieve(url, "data\\" + ticker + ".csv")
 
 def symbol_to_path(symbol, base_dir="data"):
@@ -34,12 +34,12 @@ def get_data(symbols, dates):
     for symbol in symbols:
         path = symbol_to_path(symbol)
         if os.path.isfile(path) == False:
-            print symbol + " not found. Fetching remotely."
+            print(symbol + " not found. Fetching remotely.")
             fetch_ticker(symbol)
         df_temp = pd.read_csv(symbol_to_path(symbol), index_col="Date", parse_dates=True,
                               usecols=['Date', 'Adj Close'], na_values=['nan'])
         #if df_temp == False:
-        #    print "FILE NOT FOUND!"
+        #    print("FILE NOT FOUND!")
         df_temp = df_temp.rename(columns = {'Adj Close': symbol})
         df_temp = normalize_data(df_temp) #TODO: WHAT THE HECK
 
@@ -61,11 +61,11 @@ if __name__ == "__main__":
 
     update = True
     if update:
-        print "Updating stocks"
+        print("Updating stocks")
         for symbol in symbols:
             fetch_ticker(symbol)
 
-    print "Update complete"
+    print("Update complete")
 
     start_date = '2016-01-01'
     end_date = '2016-05-26'

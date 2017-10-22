@@ -10,7 +10,7 @@ class WatchListManager:
         with open(self.watchlistfile, 'rbU') as csvfile:
             reader = csv.reader(csvfile)
             for ticker in reader:
-                print ticker
+                print(ticker)
                 self.tickers.append(ticker[0])
 
 
@@ -22,6 +22,6 @@ class WatchListManager:
 
             # Add to saved.
             with open(self.watchlistfile, 'ab') as csvfile:
-                print ticker
+                print(ticker)
                 writer = csv.writer(csvfile)
                 writer.writerow([ticker])

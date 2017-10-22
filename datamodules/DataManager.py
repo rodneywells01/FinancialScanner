@@ -5,7 +5,7 @@ import datetime
 class DataManager:
 
     def __init__(self, tickerfolder):
-        print "Data manager initialized"
+        print("Data manager initialized")
         self.start_date = datetime.datetime.now()
         self.end_date = datetime.date(2000, 1, 1)
         self.datalocation = tickerfolder
@@ -35,7 +35,7 @@ class DataManager:
         for component in endcomponents:
             url += component
         url += "&ignore=.csv"
-        print url
+        print(url)
 
         # Make request
         urllib.urlretrieve(url, self.datalocation + ticker + ".csv")

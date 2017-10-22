@@ -63,4 +63,4 @@ if __name__ == "__main__":
     end_date = '2016-03-26'
     dates = pd.date_range(start_date, end_date)
     df = get_data(symbols, dates)
-    print df
+    print(df)

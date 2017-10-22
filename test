@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 
 def test_run():
     df = pd.read_csv("data/MU.csv")
-    print df.head() # print entire dataframe
-    print df[10:20]
+    print(df.head() # print(entire dataframe)
+    print(df[10:20])
 
 def get_max_close(symbol):
     """
     Return the maximum closing value for stock indicated by symbol.a
     """
-    print "Let's find " + symbol
+    print("Let's find " + symbol)
     df = pd.read_csv("data/{}.csv".format(symbol))
     return df['Close'].max() # Compute and return max
 
@@ -30,12 +30,12 @@ def get_mean_volume(symbol):
 """
 Notable commands
 ================
-df - print all of the data frame
-df.head() - print first 5 lines of data frame
-df.tail() - print last 5 lines
+df - print(all of the data frame)
+df.head() - print(first 5 lines of data frame)
+df.tail() - print(last 5 lines)
 df[start:end] (noninclusive end)
 list.mean()
 """
 
 if __name__ == "__main__":
-    print get_mean_volume("MU")
+    print(get_mean_volume("MU"))

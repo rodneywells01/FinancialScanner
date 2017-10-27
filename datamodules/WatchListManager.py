@@ -7,7 +7,8 @@ class WatchListManager:
         self.watchlistfile = watchlistfile
 
         # Load saved.
-        with open(self.watchlistfile, 'rbU') as csvfile:
+        print(self.watchlistfile)
+        with open(self.watchlistfile, 'r') as csvfile:
             reader = csv.reader(csvfile)
             for ticker in reader:
                 print(ticker)

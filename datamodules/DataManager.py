@@ -1,4 +1,4 @@
-import urllib
+from urllib.request import urlretrieve
 import datetime
 
 
@@ -37,5 +37,7 @@ class DataManager:
         url += "&ignore=.csv"
         print(url)
 
-        # Make request
-        urllib.urlretrieve(url, self.datalocation + ticker + ".csv")
+        
+
+        # Make request        
+        urlretrieve(url, self.datalocation + ticker + ".csv")
